@@ -66,7 +66,7 @@ module Tokenizable
   # Creates a token if not set
   def generate_token
     self.token = loop do
-      token = CodeGen.generate('*' * (self.class.token_length_var || DEFAULT_LENGTH))
+      token = SecureRandom.urlsafe_base64(self.class.token_length_var || DEFAULT_LENGTH).downcase
       break token unless self.class.exists?(token: token)
     end
   end
