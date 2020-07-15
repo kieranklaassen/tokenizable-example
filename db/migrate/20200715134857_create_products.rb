@@ -4,7 +4,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.string :title
       t.string :description
       t.decimal :price
-      t.string :token
+      t.string :token, null: false
 
       t.timestamps
     end

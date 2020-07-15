@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_07_15_134857) do
     t.string "title"
     t.string "description"
     t.decimal "price"
-    t.string "token"
+    t.string "token", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["token"], name: "index_products_on_token"
